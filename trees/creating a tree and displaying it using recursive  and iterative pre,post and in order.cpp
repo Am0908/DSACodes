@@ -225,7 +225,5 @@ printf("\nIterative preorder ");
 ipreorder(root);
 printf("\nIterative inorder ");
 iinorder(root);
-printf("\nIterative postorder ");
-ipostorder(root);
 return 0;
 } 
