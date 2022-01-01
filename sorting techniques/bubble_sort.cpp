@@ -1,3 +1,5 @@
+//bubble sort is adaptive
+
 #include <iostream>
 using namespace std;
 int main()
