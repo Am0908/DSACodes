@@ -2,8 +2,13 @@
 using namespace std;
 int main()
 {
-    int arr[5]={3,6,1,8,2};
-    for(int i=1;i<5;i++)
+  int n;
+  cin>>n;
+  int arr[n];
+  for(int i=0;i<n;i++)
+  cin>>arr[i];
+
+    for(int i=1;i<n;i++)
     {
         int temp=arr[i];
         int j=i-1;
@@ -14,9 +19,9 @@ int main()
         }
         arr[j+1]=temp;
     }
-    for(int i=0;i<5;i++)
+    for(int i=0;i<n;i++)
     cout<<arr[i];
     return 0;
 }
 
-//Watch the video  :  https://youtu.be/yCxV0kBpA6M 
+//Watch the video  :  https://youtu.be/yCxV0kBpA6M
