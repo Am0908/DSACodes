@@ -1,6 +1,23 @@
 #include <iostream>
 using namespace std;
 
+
+/*
+algorithm:
+1. first find maximum element of the array of size n
+2. create a new array  arr2 of size=max+1 and initialize all the elements to zero
+3. using a for loop from i=0 to i < n
+    arr2[arr1[i]]++;
+    end for
+4. using a while loop for i< max+1
+    if arr2[i]>0
+      arr1[j++]=i;
+      arr2[i]--;
+    else
+      i++;
+
+    end while
+*/
 int findmax(int arr[],int n)
 {
     int max=0;
