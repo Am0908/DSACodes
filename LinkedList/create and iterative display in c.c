@@ -31,8 +31,58 @@ void display(struct node *p)
         t=t->next;
     }
 }
+int count(struct node *q)
+{
+    struct node *p=q;
+    int count=0;
+    while(p!=NULL)
+    {
+        count++;
+        p=p->next;
+    }
+    return count;
+}
+int Delete(int index)
+{
+    struct node *p,*t;
+    int x=-1;
+    p=first;
+    if(index<1 || index > count(p))
+    return -1;
+    if(index==1)
+    {
+        x=first->data;
+        first=first->next;
+        delete p;
+        return x;
+    }
+    else
+    {
+        for(int i=0;i<index-1;i++)
+        {
+            t=p;
+            p=p->next;
+        }
+        t->next=p->next;
+        x=p->data;
+        delete p;
+        return x;
+    }
+}
 
-
+bool issorted(struct node *q)
+{
+    struct node *p=q;
+    int x=-65536;
+    while(p!=NULL)
+    {
+        if(p->data<x)
+        return false;
+        x=p->data;
+        p=p->next;
+    }
+    return true;
+}
 int main()
 {
     create(40);
