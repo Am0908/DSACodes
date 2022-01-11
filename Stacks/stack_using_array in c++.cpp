@@ -9,7 +9,7 @@ class stack
     int *s;
 
     public:
-    void create(int size);
+    stack(int size);
     void push(int x);
     int pop();
     void display();
@@ -20,16 +20,15 @@ class stack
     ~stack();
 };
 
-void stack::create(int size)
-{
-    this->size=size;
-    top=-1;
-    s=new int[size];
+stack::stack(int size) {
+    this->size = size;
+    top = -1;
+    s = new int[size];
 }
 
 void stack::push(int x)
 {
-    if(top<size-1)
+    if(!isfull())
     {
         top++;
         s[top]=x;
@@ -38,25 +37,28 @@ void stack::push(int x)
     cout<<"stack overflow\n";
 }
 
-int stack::pop()
-{
+int stack::pop() {
     int x=-1;
     if(top==-1)
-    cout<<"stack underflow!\n";
-    else
     {
-        x=s[top];
-        top--;
+        cout<<"stack is empty"<<endl;
     }
+    else{
+        x=s[top--];
+    }
+
     return x;
 }
 
 void stack::display()
 {
-    while(top>-1)
+    cout<<"Stack \n\n";
+    int t;
+    t=top;
+    while(t>-1)
     {
-        cout<<s[top]<<" ";
-        top--;
+        cout<<"| "<<s[t]<<" |\n"<<"|"<<"____"<<"|\n";
+        t--;
     }
     cout<<"\n";
 }
@@ -96,15 +98,18 @@ stack::~stack()
 {
     delete[] s;
 }
+
 int main()
 {
-    stack st;
-    st.create(5);
+    stack st(5);
     st.push(10);
     st.push(20);
     st.push(30);
     st.push(40);
     st.push(50);
+    st.pop();
+    st.display();
+    st.pop();
     st.display();
     return 0;
 }
