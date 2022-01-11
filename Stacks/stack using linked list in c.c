@@ -11,7 +11,6 @@ void push(int x)
 {
     struct node *t;
     t=(struct node *)malloc(sizeof(struct node));
-    t->data=x;
     if(t==NULL)
     printf("stack is full\n");
     else
