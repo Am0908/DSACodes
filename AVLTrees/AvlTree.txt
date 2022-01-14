@@ -1,0 +1,4 @@
+Balance factor = Height of left subtree - height of right subtree.
+Balance factor of any node must be -1 or 0 or 1 (valid balance factor). 
+BF = |HL - RL| <=1  (balanced node)
+If BF of any node is greater than 1 then that node is imbalanced.
