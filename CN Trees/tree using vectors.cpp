@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 using namespace std;
 
 template <typename T>
@@ -14,6 +15,33 @@ class treenode
         this->data=data;
     }
 };
+
+treenode<int>* takeinputlevelwise()
+{
+    int rootdata;
+    cout << "enter root data:";
+    cin >> rootdata;
+    treenode<int>* root = new treenode<int>(rootdata);
+    queue<treenode<int>*> pendingnodes;
+    pendingnodes.push(root);
+    while(pendingnodes.size() != 0)
+    {
+        treenode<int>* front = pendingnodes.front();
+        pendingnodes.pop();
+        cout << "enter number of children of "<< front->data<<": ";
+        int numchild,childdata;
+        cin >> numchild;
+        for(int i=0;i<numchild;i++)
+        {
+            cout << "enter the " << i<< " child of "<<front->data<<": ";
+            cin>>childdata;
+            treenode<int>* child = new treenode<int>(childdata);
+            front->children.push_back(child);
+            pendingnodes.push(child);
+        }
+    }
+    return root;
+}
 
 treenode<int>* takeinput()
 {
@@ -59,13 +87,10 @@ int main()
 
 
     //take input.
-    treenode<int>* root= takeinput();
+    treenode<int>* root= takeinputlevelwise();
 
     //display the nodes.
     printree(root);
-
-    //TODO delete the tree.
-
 
     return 0;
 }
