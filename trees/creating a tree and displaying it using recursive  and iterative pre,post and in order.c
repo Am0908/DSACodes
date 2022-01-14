@@ -192,6 +192,7 @@ void ipreorder(struct Node *p)
     }
 }
 
+
 void iinorder(struct Node *p)
 {
     struct stack stk;
