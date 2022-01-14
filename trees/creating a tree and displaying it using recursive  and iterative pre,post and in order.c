@@ -222,6 +222,26 @@ int countnode(struct Node *p)
     }
     return 0;
 }
+
+int count(struct Node *root)
+{
+    if(root)
+        return count(root->lchild)+count(root->rchild)+1;
+    return 0;
+}
+
+int height(struct Node *p)
+{
+  int x,y;
+  if(p==NULL)
+  return 0;
+  x=height(p->lchild);
+  y=height(p->rchild);
+  if(x>y)
+  return x+1;
+  return y+1;
+}
+
 int main()
 {
 Treecreate();
