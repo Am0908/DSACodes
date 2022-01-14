@@ -77,6 +77,37 @@ void printree(treenode<int>*root)
     printree(root->children[i]);
 }
 
+void printreelevelwise(treenode<int>*root)
+{
+    if(root==NULL)  //edge case as we will not pass a NULL root node.
+    {
+        cout<<"no nodes are present.";
+        return;
+    }
+    queue<treenode<int>*> pendingnodes;
+    pendingnodes.push(root);
+    while(!pendingnodes.empty())
+    {
+        treenode<int>* front = pendingnodes.front();
+        pendingnodes.pop();
+        cout<<front->data<<" : ";
+	  for(int i=0;i<front->children.size();i++)
+        {
+            cout <<  front->children[i]->data << ',' ;
+            pendingnodes.push(front->children[i]);
+        }
+        cout<<endl;
+    }
+}
+
+int numofnodes(treenode<int>* root)
+{
+    int ans=1;
+    for(int i=0;i<root->children.size();i++)
+    ans+=numofnodes(root->children[i]);
+    return ans;
+}
+
 int main()
 {
     /* treenode<int>* root= new treenode<int>(1);
@@ -85,12 +116,14 @@ int main()
        root->children.push_back(node1);
        root->children.push_back(node2); */
 
-
     //take input.
     treenode<int>* root= takeinputlevelwise();
 
     //display the nodes.
-    printree(root);
+    printreelevelwise(root);
+
+    // Total number of nodes.
+    cout<<"number of nodes: "<<numofnodes(root)<<endl;
 
     return 0;
 }
