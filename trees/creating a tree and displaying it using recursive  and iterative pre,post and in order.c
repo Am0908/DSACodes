@@ -211,7 +211,17 @@ void iinorder(struct Node *p)
         }
     }
 }
-
+int countnode(struct Node *p)
+{
+    int x,y;
+    if(p!=NULL)
+    {
+       x=countnode(p->lchild);
+       y=countnode(p->rchild);
+       return x+y+1;
+    }
+    return 0;
+}
 int main()
 {
 Treecreate();
