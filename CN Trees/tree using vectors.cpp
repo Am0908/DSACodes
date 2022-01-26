@@ -119,6 +119,18 @@ int sumofnodes(treenode<int>* root)
     return sum;
 }
 
+int findheight(treenode<int>* root)
+{
+    int max=0;
+    for(int i=0;i<root->children.size();i++)
+    {
+        int height=findheight(root->children[i]);
+        if(height>max)
+        max=height;
+    }
+    return max+1;
+}
+
 int main()
 {
     /* treenode<int>* root= new treenode<int>(1);
