@@ -131,6 +131,19 @@ int findheight(treenode<int>* root)
     return max+1;
 }
 
+void printatlevelK(treenode<int>* root, int k)
+{
+    if(k == 0)
+    {
+        cout<<root->data<<endl;
+        return;
+    }
+    for(int i = 0 ; i < root->children.size() ; i++)
+    {
+        printatlevelK(root->children[i] , k-1);
+    }
+}
+
 int main()
 {
     /* treenode<int>* root= new treenode<int>(1);
