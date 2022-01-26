@@ -108,6 +108,17 @@ int numofnodes(treenode<int>* root)
     return ans;
 }
 
+
+int sumofnodes(treenode<int>* root)
+{
+    int sum = root->data;
+    for(int i = 0 ; i < root->children.size() ; i++)
+    {
+        sum += sumofnodes(root->children[i]);
+    }
+    return sum;
+}
+
 int main()
 {
     /* treenode<int>* root= new treenode<int>(1);
