@@ -204,6 +204,13 @@ void postorder(treenode<int>* root)
     cout<<root->data<<" ";
 }
 
+void deletetree(treenode<int>* root)
+{
+    for(int i=0; i<root->children.size(); i++)
+    deletetree(root->children[i]);
+    delete root;
+}
+
 int main()
 {
     /* treenode<int>* root= new treenode<int>(1);
