@@ -14,6 +14,12 @@ class treenode
     {
         this->data=data;
     }
+
+    ~treenode()
+    {
+      for(int i=0 ; i<children.size() ; i++)
+      delete children[i];
+    }
 };
 
 treenode<int>* takeinputlevelwise()
