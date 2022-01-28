@@ -217,6 +217,25 @@ void deletetree(treenode<int>* root)
     delete root;
 }
 
+treenode<int>* maxdatanode(treenode<int>* root)
+{
+    if(root==NULL)
+    return NULL;
+    treenode<int>* result=root;
+    int max=root->data;
+    for(int i=0; i<root->children.size(); i++)
+    {
+        treenode<int>* temp=maxdatanode(root->children[i]);
+        if(temp->data > max)
+        {
+            max=temp->data;
+            result=temp;
+        }
+    }
+    return result;
+}
+
+
 int main()
 {
     /* treenode<int>* root= new treenode<int>(1);
