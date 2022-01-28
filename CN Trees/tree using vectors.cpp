@@ -102,6 +102,8 @@ void printreelevelwise(treenode<int>*root)
 
 int numofnodes(treenode<int>* root)
 {
+    if(root==NULL)
+    return 0;
     int ans=1;
     for(int i=0;i<root->children.size();i++)
     ans+=numofnodes(root->children[i]);
