@@ -168,6 +168,20 @@ int inumofleafnodes(treenode<int>* root)
     return count;
 }
 
+int rnumofleafnodes(treenode<int>* root)
+{
+    if(root==NULL)
+    return 0;
+    if(root->children.size()==0)
+    return 1;
+    int result = 0;
+    for(int i=0; i<root->children.size(); i++)
+    {
+        result+=rnumofleafnodes(root->children[i]);
+    }
+    return result;
+}
+
 int main()
 {
     /* treenode<int>* root= new treenode<int>(1);
