@@ -144,7 +144,7 @@ void printatlevelK(treenode<int>* root, int k)
     }
 }
 
-int numofleafnodes(treenode<int>* root)
+int inumofleafnodes(treenode<int>* root)
 {
     if(!root)
     return 0;
