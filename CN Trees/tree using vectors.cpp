@@ -144,6 +144,30 @@ void printatlevelK(treenode<int>* root, int k)
     }
 }
 
+int numofleafnodes(treenode<int>* root)
+{
+    if(!root)
+    return 0;
+
+    queue<treenode<int>*> q;
+
+    int count=0;
+    q.push(root);
+    while(q.size()!=0)
+    {
+        treenode<int> *temp = q.front();
+        q.pop();
+        for(int i=0;i<temp->children.size();i++)
+        {
+            if(temp->children[i]->children.size()==0)
+            count++;
+            else
+            q.push(root->children[i]);
+        }
+    }
+    return count;
+}
+
 int main()
 {
     /* treenode<int>* root= new treenode<int>(1);
