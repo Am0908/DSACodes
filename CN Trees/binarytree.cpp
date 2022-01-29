@@ -141,6 +141,19 @@ void postorder(binarynode<int>* root)
     }
 }
 
+void mirrortree(binarynode<int>* root)
+{
+    if(root==NULL)
+    return;
+    else
+    {
+        mirrortree(root->lchild);
+        mirrortree(root->rchild);
+        binarynode<int>* temp = root->lchild;
+        root->lchild=root->rchild;
+        root->rchild=temp;
+    }
+}
 
 int main()
 {
