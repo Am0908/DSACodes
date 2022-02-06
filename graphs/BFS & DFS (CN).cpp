@@ -2,9 +2,7 @@
 #include <queue>
 using namespace std;
 
-
 // BFS & DFS
-
 
 void printDFS(int** edges, int n, int sv, bool* visited)
 {
@@ -77,11 +75,17 @@ int main()
     bool* visited = new bool[n];
     for(int i =0; i < n; i++)
     visited[i] = false;
+
     cout<<"BFS"<<endl;
     printBFS(edges, n, 0);
+
     cout<<"DFS"<<endl;
     printDFS(edges, n, 0, visited);
 
+    delete [] visited;
+    for(int i = 0; i < n; i++)
+    delete [] edges[i];
+    delete [] edges;
 
     // for(int i=0;i<n;i++)
     // {
