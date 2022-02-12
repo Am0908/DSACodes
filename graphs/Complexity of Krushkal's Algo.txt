@@ -1,0 +1,15 @@
+
+Complexity of Krushkal's algorithm :  Union find
+
+1. Take input -  O(E)
+
+2. Sort input array - O(E log E)
+
+3. cycle detection (parent figureout) -  O(v)
+
+4. pick n-1 edges and put in MST -  O(E * V)
+
+Total time complexity - O(E log E + E * V)
+
+Alternate option : union by rank & path compression.
+time complexity - O(E log E + E log V)
