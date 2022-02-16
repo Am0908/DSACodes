@@ -25,3 +25,7 @@ int main()
 
 
 //dynamic programming is bottom up approach and memoization is top down approach
+//time complexities:
+// memoization - O(n)
+// Dp - O(n)
+// Recursion - O(2^n)
