@@ -1,0 +1,20 @@
+STEP 1: Make a boolean array to know if the vertices has been visited or not;
+STEP 2: Make a distance array to store the shortest distances of the vertices from the vertex 0;
+STEP 3: Initially set all the distances to infinite and visited to false;
+STEP 4: set Distance of vertex 0 to 0;
+STEP 5: For 0 to n-1
+
+        int minvertex = findminvertex (distance, visited, n);
+        visited[minvertex] = true;
+
+        explore all the neighbours of minvertex using for loop.
+        for j = 0 to j = n
+            if(edges[minvertex][j] != 0 && !Visited[j])
+            {
+            int dist = distance[minvertex] + edges[minvertex][j];
+            if(dist < distance[j])
+            distance[j] =  dist;
+            }
+
+STEP 5: Print the result using for loop i.e. print i and distance[i]
+STEP 6: Delete the visited and distance arrays.
