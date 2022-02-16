@@ -1,18 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int fibo_1(int n)
-{
-    if(n <= 1)
-    return n;
-
-    int a = fibo1(n-1);
-    int b = fibo1(n-2);
-
-    return a + b;
-}
-
-int fibo_2(int n)
+int fibo(int n)
 {
     int* ans = new int[n+1];
     ans[0] = 0;
@@ -23,6 +12,7 @@ int fibo_2(int n)
     return ans[n];
 }
 
+
 int main()
 {
    int n;
@@ -32,3 +22,6 @@ int main()
 
     return 0;
 }
+
+
+//dynamic programming is bottom up approach and memoization is top down approach

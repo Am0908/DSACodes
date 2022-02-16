@@ -31,6 +31,17 @@ int fibo(int n)
     return fibo_helper(ans, n);
 }
 
+int fibo_2(int n)
+{
+    if(n <= 1)
+    return n;
+
+    int a = fibo1(n-1);
+    int b = fibo1(n-2);
+
+    return a + b;
+}
+
 int main()
 {
     int n;
