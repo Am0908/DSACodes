@@ -10,7 +10,7 @@ int balancedbst(int h)
     int y = balancedbst(h-2);
 
     int ans = x * x + 2 * x * y;
-    return ans;
+    return ans % 1000000007 ;
 }
 
 int main()
