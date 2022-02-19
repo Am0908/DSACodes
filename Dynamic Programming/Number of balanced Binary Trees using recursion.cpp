@@ -3,17 +3,18 @@ using namespace std;
 
 int balancedbst(int h)
 {
-  if(h<=1)
- return 1;
+    if(h<=1)
+    return 1;
 
- int x = balancedbst(h-1);
- int y = balancedbst(h-2);
+    int x = balancedbst(h-1);
+    int y = balancedbst(h-2);
 
- int temp1 = x * x % 1000000007;
- int temp2 = 2 * x * y % 1000000007;
+    int mod = (int) (pow(10,9)) +7;
+    int temp1 =(int) (((long)(x) * x )% mod);
+    int temp2 = (int) ((2* (long) (x) * y) % mod);
 
- int ans = temp1 + temp2;
- return ans;
+    int ans =(temp1 + temp2) % mod;
+    return ans;
 }
 
 int main()
