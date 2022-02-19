@@ -10,9 +10,9 @@ int balancedbst(int h)
  int y = balancedbst(h-2);
 
  int temp1 = x * x % 1000000007;
- int temp2 = x * y % 1000000007;
+ int temp2 = 2 * x * y % 1000000007;
 
- int ans = temp1 + 2 * temp2;
+ int ans = temp1 + temp2;
  return ans;
 }
 
