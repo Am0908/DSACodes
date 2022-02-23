@@ -56,3 +56,6 @@ int main()
     cout<<lcs_mem(s, t);
     return 0;
 }
+
+// time complexity : O(mn)
+// space complexity : O(mn)
